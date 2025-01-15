@@ -14,13 +14,12 @@ require "faker"
 puts "Cleaning database"
 Restaurant.destroy_all
 # 2. create the instances
-5.times do {
+5.times do
   Restaurant.create!(
     name: Faker::Restaurant.name,
     address: Faker::Address.full_address,
     phone_number: Faker::PhoneNumber.phone_number_with_country_code,
-    category: %w(chinese italian japanese french belgian).sample
-  )
-}
+    category: %w(chinese italian japanese french belgian).sample)
+end
 # 3. display message
 puts "Finished! Created #{Restaurant.count} restaurants"

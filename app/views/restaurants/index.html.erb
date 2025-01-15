@@ -1,0 +1,9 @@
+<div class="d-flex flex-row justify-content-between">
+  <h1>Restaurants</h1>
+  <a href="restaurants/new" class="btn btn-primary">Create new restaurant</a>
+</div>
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+  <% end %>
+</ul>
